@@ -46,10 +46,6 @@ header .bim .bum {
   height: 100px;
 }
 
-header .bim .bum .none_selected {
-  border-bottom: 5.5px solid #00824800;
-}
-
 header .bim .bum li, header .bim .bum a, header .bim .bum button {
   font-weight: 750;
   font-size: 14px;
@@ -172,6 +168,10 @@ header .bim .geo a:hover {
   border-bottom: 5px solid #008248;
 }
 
+.nav_stick .kisz .lift {
+  border-bottom: 5px solid #00824800;
+}
+
 .nav_stick .kisz li, .nav_stick .kisz a, .nav_stick .kisz button {
   font-weight: 750;
   font-size: 14px;
@@ -274,6 +274,7 @@ main div p {
   background-color: #d4e9e2;
   font-size: 19px;
   max-width: 1450px;
+  margin-top: 100px;
   margin-bottom: 30px;
   padding: 25px 0px 30px 0px;
 }
@@ -349,11 +350,7 @@ main div p {
   width: 100%;
 }
 
-.products_grid .visa {
-  background-color: #d4e9e2;
-}
-
-.products_grid .app {
+.products_grid .item {
   background-color: #d4e9e2;
 }
 
@@ -394,7 +391,7 @@ main div p {
 }
 
 .v3 .content {
-  padding: 0px 50px 0px 50px;
+  padding: 20px 30px;
 }
 
 .v3 .content h3 {
@@ -602,8 +599,11 @@ main div p {
   width: 100%;
   z-index: 1;
   margin-left: 220px;
-  padding-bottom: 40px;
-  padding-top: 20px;
+  padding-top: 10px;
+}
+
+.main_gift .gift_cards.first {
+  padding-bottom: 30px;
 }
 
 .main_gift .gift_cards .cards_category {
@@ -740,6 +740,82 @@ main div p {
   color: #af851186;
 }
 
+.main_gift .gift_bulk {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  background-color: #f9f9f9;
+  height: 375px;
+  padding-left: 120px;
+}
+
+.main_gift .gift_bulk img {
+  width: 375px;
+  margin-right: 45px;
+}
+
+.main_gift .gift_bulk .desc {
+  text-align: left;
+  width: 270px;
+}
+
+.main_gift .gift_bulk .desc h3 {
+  font-size: 23px;
+  letter-spacing: .6px;
+  font-weight: 500;
+  padding-bottom: 20px;
+  margin: 0;
+}
+
+.main_gift .gift_bulk .desc p {
+  font-size: 16px;
+  opacity: .7;
+  letter-spacing: .4px;
+}
+
+.main_gift .gift_bulk .desc button {
+  margin: 9px;
+}
+
+.main_gift .gift_support {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #edebe9;
+  text-align: left;
+  height: 224px;
+  padding-left: 120px;
+  margin-bottom: 40px;
+}
+
+.main_gift .gift_support h3 {
+  font-size: 15px;
+  letter-spacing: .6px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.main_gift .gift_support p {
+  font-size: 16px;
+  opacity: .7;
+  letter-spacing: .4px;
+  max-width: 400px;
+  margin-bottom: 5px;
+}
+
+.main_gift .gift_support button {
+  margin: 9px;
+}
+
 /* FOOTER */
 footer {
   padding: 40px 5%;
@@ -792,18 +868,22 @@ footer .second_layer {
 
 footer .second_layer .social_media {
   font-size: 30px;
-  padding-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 footer .second_layer .social_media a {
+  width: 30px;
+  height: 30px;
   color: #000000;
-  margin-right: 00px;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   border: hidden 1px;
   margin: 10px;
   padding: 0px;
   border-radius: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 footer .second_layer .social_media a:hover {
@@ -933,6 +1013,124 @@ footer .second_layer .copyright {
     -webkit-transform: scale(4);
             transform: scale(4);
     opacity: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .products_grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .products_grid .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .products_grid .content a {
+    margin-bottom: 25px;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .product_showcase {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .product_showcase.v1 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .product_showcase img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .product_showcase a {
+    margin-bottom: 25px;
+  }
+  .products_grid .content {
+    -ms-grid-rows: 130px 195px 80px;
+        grid-template-rows: 130px 195px 80px;
+  }
+  footer .details {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: 40px;
+  }
+  footer .details .heading {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    text-align: center;
+    cursor: pointer;
+    z-index: 1200;
+    background-color: #fff;
+  }
+  footer .details .heading p {
+    padding: 0px;
+    margin-bottom: 30px;
+  }
+  footer .details .heading button {
+    border: none;
+    background: none;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    border-radius: 50%;
+  }
+  footer .details .heading button:hover {
+    background-color: #00000017;
+  }
+  footer .details .heading button i {
+    font-size: 18px;
+  }
+  footer .details .heading button.rotate {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  footer .details .list_hidden {
+    display: none;
+  }
+  footer .second_layer .legal {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  footer .second_layer .legal a {
+    border: none;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  .footer_info .heading button {
+    display: none;
   }
 }
 /*# sourceMappingURL=style.css.map */

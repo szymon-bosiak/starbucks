@@ -1,6 +1,4 @@
-/* function navSelected(el) {
-    el.classList.add("nav_selected");
-} */
+/* CAROSELE SLIDER */
 
 const track = document.querySelectorAll('.slider');
 
@@ -18,8 +16,10 @@ for (let i = 0; i < track.length; i++) {
         const currentSlide = slide.querySelector('.active');
         const slideIndex = slide_item.findIndex(slide_item => slide_item === currentSlide);
 
+        console.log(slide_item.length);
+
         //remove btns if carousele is shorter than 3
-        if (slide.length <= 3) {
+        if (slide_item.length <= 4) {
             prevBtn.classList.add('hidden');
             nextBtn.classList.add('hidden');
         }
@@ -66,8 +66,22 @@ for (let i = 0; i < track.length; i++) {
 
 }
 
+/* REACTIVE FOOTER */
+
+const footer_info = document.querySelectorAll('.footer_info');
+const footer_heading = document.querySelectorAll('.heading');
+const reveal_footer = document.querySelectorAll('.reveal_footer');
+const list = document.querySelectorAll('.list');
+
+//iterate footer headings and toggle their lists
+
+for (let i = 0; i < footer_info.length; i++) {
+
+    footer_heading[i].addEventListener('click', e=> {
+        list[i].classList.toggle('list_hidden');
+        reveal_footer[i].classList.toggle('rotate');
+    });
+}
 
 
-
-// ADD FADED IMGS IF THEY ARE OUT OF CAROUSEL
-
+/* HAMBURGER MENU */
