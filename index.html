@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Starbucks</title>
 </head>
+
 <body>
     <header>
 
@@ -46,10 +48,9 @@
                 <div class="navigation">
                     <ul class="navigation__list">
                         <div class="links_hamburger">
-                            <button class="navigation__item menu_toggle">Menu<i class="fas fa-chevron-right"></i></button>
-                            <a class="navigation__item" href="">Rewards</a>
-                            <a class="navigation__item" href="">Gift Cards</a>
-
+                            <button class="navigation__item menu_toggle clear">Menu<i class="fas fa-chevron-right"></i></button>
+                            <a class="navigation__item" href="rewards.html">Rewards</a>
+                            <a class="navigation__item" href="gift.cards.html">Gift Cards</a>
                         </div>
                         
                         <div class="line"></div>
@@ -63,6 +64,18 @@
                         </div>
                     </ul>
                 </div>
+
+                <div class="navigation second">
+                    <ul class="navigation__list">
+                        <div class="links_hamburger">
+                            <button class="navigation__item menu_toggle fade">Menu<i class="fas fa-chevron-left"></i></button>
+                            <a class="navigation__item" href="menu.html">All products</a>
+                            <a class="navigation__item" href="menu.featured.html">Featured</a>
+                            <a class="navigation__item" href="menu.previous_orders.html">Previous Orders</a>
+                            <a class="navigation__item" href="menu.favorite_products.html">Favorite Products</a> 
+                        </div>
+                    </ul>
+                </div>
             </div>
 
         </div>
@@ -70,6 +83,9 @@
     </header>
 
     <main>
+
+        <div class="overlay_here"></div>
+        
         <div class="covid">
             <p>Following CDC guidance, facial coverings are recommended in our stores<br>for all customers, and are required where
             mandated by local law.<br><a href="#">Learn more</a></p>

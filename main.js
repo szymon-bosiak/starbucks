@@ -86,12 +86,35 @@ for (let i = 0; i < footer_info.length; i++) {
 
 /* HAMBURGER MENU */
 
+//menu appearing after clicking hamburger + overlay while menu is active
+
 const hamburger = document.querySelector('.hamburger');
 const nav = document.querySelector('.navigation');
+const overlay_here = document.querySelector('.overlay_here');
+const lock_scroll = document.querySelector('body')
+
 
 const handleClick = () => {
     hamburger.classList.toggle('hamburger--active');
     nav.classList.toggle('navigation--active');
+    nav_second.classList.remove('second--active');
+    overlay_here.classList.toggle('overlay--active');
+    lock_scroll.classList.toggle('lock');
 }
 
 hamburger.addEventListener('click', handleClick);
+
+//menu opening/closing sublist
+
+const menu_toggle = document.querySelectorAll('.menu_toggle');
+const nav_second = document.querySelector('.second');
+
+const handleSecondClick = () => {
+    nav_second.classList.toggle('second--active');
+}
+
+for (let i = 0; i < menu_toggle.length; i++) {
+    menu_toggle[i].addEventListener('click', handleSecondClick);
+}
+
+

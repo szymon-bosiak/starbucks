@@ -63,7 +63,7 @@ header{
 
         .nav_link_2{
           margin-right: 20px;
-          padding: 40px 0px;
+          padding: 4vh 0px;
         }
       } 
     }
@@ -156,7 +156,7 @@ header{
 
 .sub_nav_stripe{
   position: fixed;
-  top: 102px;
+  top: 10vh;
   max-width: initial;
   margin: 0px;
   padding: 0px;
@@ -355,7 +355,7 @@ main{
 /* MENU PAGE */
 
 .menu{
-  padding-top: 160px;
+  margin-top: 17vh;;
   display: grid;
   grid-template-columns: 150px 1fr;
   padding-left: 125px;
@@ -921,7 +921,32 @@ footer{
 
   //reusable
 
+  .lock{
+    overflow: hidden;
+  }
+
+  .overlay_here{
+    background-color: none;
+    transition: background-color .1s ease;
+
+    &.overlay--active{
+      position: fixed; /* Sit on top of the page content */
+      width: 100%; /* Full width (cover the whole page) */
+      height: 100%; /* Full height (cover the whole page) */
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.288); /* Black background with opacity */
+      z-index: 20; /* Specify a stack order in case you're using a different order for other elements */
+      cursor: default; /* Add a pointer on hover */
+      transition: background-color .1s ease;
+      overflow: hidden;
+    }
+  }
+
   header{
+
     .nav_stick{
       justify-content: space-between;
 
@@ -948,11 +973,6 @@ footer{
             background-color: #00000017;
           }
         }
-
-        //.hamburger{
-        //  transition: transform .3s .1s ease-in-out;
-        //}
-
 
         .navigation{
           transition: transform .3s .1s ease-in-out;
@@ -1040,10 +1060,11 @@ footer{
                 padding: 16px 32px;
                 text-align: left;
                 font-size: 20px;
-                width: 100%;
+                
               }
 
               a{
+                width: 100%;
                 text-decoration: none;
                 color: $dark;
               }
@@ -1052,12 +1073,20 @@ footer{
                 display: inline-flex;
                 justify-content: space-between;
                 border: none;
-                background: $light;
                 cursor: pointer;
+
+                &.clear{
+                  background: $light;
+                  width: 100%;
+
+                  i{
+                    transform: translateX(-12px);
+                  }
+                }
 
                 i{
                   font-size: 16px;
-                  
+                  //transform: translateX(-10px);
                 }
               }
             }
@@ -1097,6 +1126,24 @@ footer{
               }
               
             }
+          }
+        }
+
+        .second{
+
+          .fade{
+            background-color: #47474711;
+            border-bottom-right-radius: 50px;
+            border-top-right-radius: 50px;
+            width: 97%;
+
+            i{
+              transform: translateX(2px);
+            }
+          }
+
+          &.second--active{
+            transform: translateX(0px);
           }
         }
       }

@@ -1,9 +1,8 @@
 # ADD RESPONSIVENESS
-    - Nav bar
-        + menu tab opens subtabs
-        + fade effect on actual webpage
-        + correct animaation on hamburger
     - menu page
+    - gift cards page
+
+# CREATE REWARDS PAGE
 
 # ADD SHRINKING EFFECT ON BTNS
 

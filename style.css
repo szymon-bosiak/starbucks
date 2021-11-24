@@ -76,7 +76,7 @@ header .nav_stick .kisz li:hover, header .nav_stick .kisz a:hover, header .nav_s
 
 header .nav_stick .kisz .nav_links .nav_link_2 {
   margin-right: 20px;
-  padding: 40px 0px;
+  padding: 4vh 0px;
 }
 
 header .nav_stick nav {
@@ -166,7 +166,7 @@ header .nav_stick .geo a:hover {
 
 .sub_nav_stripe {
   position: fixed;
-  top: 102px;
+  top: 10vh;
   max-width: initial;
   margin: 0px;
   padding: 0px;
@@ -387,7 +387,7 @@ main div p {
 
 /* MENU PAGE */
 .menu {
-  padding-top: 160px;
+  margin-top: 17vh;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 150px 1fr;
@@ -1043,6 +1043,35 @@ footer .second_layer .copyright {
     -ms-grid-rows: 130px 195px 80px;
         grid-template-rows: 130px 195px 80px;
   }
+  .lock {
+    overflow: hidden;
+  }
+  .overlay_here {
+    background-color: none;
+    -webkit-transition: background-color .1s ease;
+    transition: background-color .1s ease;
+  }
+  .overlay_here.overlay--active {
+    position: fixed;
+    /* Sit on top of the page content */
+    width: 100%;
+    /* Full width (cover the whole page) */
+    height: 100%;
+    /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.288);
+    /* Black background with opacity */
+    z-index: 20;
+    /* Specify a stack order in case you're using a different order for other elements */
+    cursor: default;
+    /* Add a pointer on hover */
+    -webkit-transition: background-color .1s ease;
+    transition: background-color .1s ease;
+    overflow: hidden;
+  }
   header .nav_stick {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -1155,9 +1184,9 @@ footer .second_layer .copyright {
     padding: 16px 32px;
     text-align: left;
     font-size: 20px;
-    width: 100%;
   }
   header .nav_stick .hamburger_menu .navigation .navigation__list .links_hamburger a {
+    width: 100%;
     text-decoration: none;
     color: rgba(0, 0, 0, 0.58);
   }
@@ -1169,8 +1198,15 @@ footer .second_layer .copyright {
         -ms-flex-pack: justify;
             justify-content: space-between;
     border: none;
-    background: #FFFFFF;
     cursor: pointer;
+  }
+  header .nav_stick .hamburger_menu .navigation .navigation__list .links_hamburger button.clear {
+    background: #FFFFFF;
+    width: 100%;
+  }
+  header .nav_stick .hamburger_menu .navigation .navigation__list .links_hamburger button.clear i {
+    -webkit-transform: translateX(-12px);
+            transform: translateX(-12px);
   }
   header .nav_stick .hamburger_menu .navigation .navigation__list .links_hamburger button i {
     font-size: 16px;
@@ -1209,6 +1245,20 @@ footer .second_layer .copyright {
   }
   header .nav_stick .hamburger_menu .navigation .navigation__list .btns_hamburger .geo a:hover {
     color: #008248;
+  }
+  header .nav_stick .hamburger_menu .second .fade {
+    background-color: #47474711;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    width: 97%;
+  }
+  header .nav_stick .hamburger_menu .second .fade i {
+    -webkit-transform: translateX(2px);
+            transform: translateX(2px);
+  }
+  header .nav_stick .hamburger_menu .second.second--active {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
   }
   footer .details {
     display: -webkit-box;
