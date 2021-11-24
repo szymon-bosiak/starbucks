@@ -85,3 +85,13 @@ for (let i = 0; i < footer_info.length; i++) {
 
 
 /* HAMBURGER MENU */
+
+const hamburger = document.querySelector('.hamburger');
+const nav = document.querySelector('.navigation');
+
+const handleClick = () => {
+    hamburger.classList.toggle('hamburger--active');
+    nav.classList.toggle('navigation--active');
+}
+
+hamburger.addEventListener('click', handleClick);
