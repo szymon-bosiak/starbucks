@@ -360,6 +360,7 @@ main{
   grid-template-columns: 150px 1fr;
   padding-left: 125px;
   max-width: none;
+  overflow-y: hidden;
   
   .first_list_of_products{
     padding-top: 25px;
@@ -638,6 +639,7 @@ main{
     background-color: rgba(249,249,249,255);
     height: 375px;
     padding-left: 120px;
+    margin-top: 30px;
 
     img{
       width: 375px;
@@ -803,7 +805,7 @@ footer{
   grid-template-columns: 395px 1fr;
   bottom: 0;
   width: 100%;
-  position: fixed;
+  position: sticky;
   height: 94px;
   background-color: #1e3932;
   letter-spacing: .6px;
@@ -823,6 +825,10 @@ footer{
         color: #fff;
         font-weight: 600;
         margin-top: 4px;
+      }
+
+      .mobile{
+        display: none;
       }
     }
 
@@ -871,26 +877,105 @@ footer{
 
 // Responsiveness
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 816px) {
 
-  //index.html
+  //reusable
 
-  .products_grid{
-    display: flex;
-    flex-direction: column;
-    
-    .content{
-      display: flex;
-      flex-direction: column;
+  header{
+    .hamburger_menu{
+      display: none;
+    }
+  }
 
-      a{
-        margin-bottom: 25px;
+  .footer_info{
+    .heading{
+      button{
+        display: none;
       }
     }
   }
 }
 
-@media screen and (max-width: 810px) {
+@media screen and (max-width: 1000px) {
+
+  //gift cards page
+
+  .main_gift{
+
+    .gift_cards{
+      margin-left: 7vw;
+
+      .carousel .slider{
+    
+        .slider_btn.prev{
+          left: 7vw;
+        }
+
+        .carousel_imgs .carousel_link img{
+          width: 27vw;
+        }
+      }
+    }
+
+    .already_have{
+      padding-left: 5vw;
+    }
+  }
+
+  //menu page
+
+  .menu{
+
+    .selection{
+      display: flex;
+      flex-direction: column;
+
+      .last_in_menu{
+        margin-bottom: 30px;
+      }
+
+      .selection_h2{
+        font-size: 18px;
+      }
+
+      .selection_container{
+        display: flex;
+        flex-direction: column;
+
+        a{
+          margin-bottom: 1.5vh;
+
+          .item{
+
+            .item_content{
+              height: 12vh;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .item_availability{
+    display: flex;
+    justify-content: center;
+    height: 74px;
+
+    .space{
+      display: none;
+    }
+
+    .availability_content{
+      width: 100%;
+
+      .location{ 
+        margin-left: 125px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 815px) {
 
   //index.html
 
@@ -918,6 +1003,144 @@ footer{
       grid-template-rows: 130px 195px 80px;
     }
   }
+
+  //gift.cards.html
+
+  .main_gift{
+
+    .gift_bulk{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      height: 100%;
+      padding: 20px 0px 20px 5vw;
+
+      .desc{
+        margin-top: 15px;
+      }
+    }
+    
+    .gift_support{
+      padding-left: 5vw;
+    }
+  }
+
+  //menu.html
+
+  .sub_nav_stripe{
+    display: none;
+  }
+
+  .menu{
+    margin-top: 12vh;;
+    padding-left: 6vw;
+    overflow-x: hidden;
+  
+    .list_of_products{
+      display: none;
+    }
+
+    .selection{
+      display: flex;
+      flex-direction: column;
+      padding: 0px;
+      width: 95vw;
+
+      .selection_h1{
+        font-size: 26px;
+        padding-bottom: 18px;
+      }
+
+      .last_in_menu{
+        margin-bottom: 30px;
+      }
+
+      .selection_h2{
+        font-size: 18px;
+      }
+
+      .selection_container{
+        display: flex;
+        flex-direction: column;
+
+        a{
+          margin-bottom: 1.5vh;
+
+          .item{
+
+            .item_content{
+              height: 8vh;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .item_availability{
+    display: flex;
+    justify-content: center;
+    height: 74px;
+
+    .space{
+      display: none;
+    }
+
+    .availability_content{
+      width: 100%;
+      margin: 0 16px;
+
+      a{
+        font-size: 14px;
+        font-weight: 600;
+
+        .location_txt{
+          display: inline-flex;
+
+          .light{
+            display: none;
+          }
+
+          .strong{
+            display: none;
+          }
+
+          .mobile{
+            display: flex;
+          }
+        }
+      }
+
+      .location{ 
+        height: 54px;
+        margin-left: 0px;
+
+        a{
+          width: 85vw;
+
+          i{
+            transform: translateY(-1px);
+          }
+        }
+      }
+
+      .cart i{
+        padding-right: 0px;
+      }
+    }
+  }
+
+  /* FEATURED */
+
+  .new_leaf{
+    color: #1e3932;
+    letter-spacing: 8px;
+    margin: 20px 0px;
+    .h1_go_up{
+      transform: translateY(-10px);
+    }
+  }
+
 
   //reusable
 
@@ -1086,7 +1309,6 @@ footer{
 
                 i{
                   font-size: 16px;
-                  //transform: translateX(-10px);
                 }
               }
             }
@@ -1210,23 +1432,46 @@ footer{
       }
     }
   }
-
 }
 
-@media screen and (min-width: 811px) {
+@media screen and (max-width: 700px) {
 
-  //reusable
+  //gift cards page
 
-  header{
-    .hamburger_menu{
-      display: none;
+  .main_gift{
+
+    .gift_cards{
+      margin-left: 7vw;
+    }
+
+    .already_have{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 21vh;
+
+      h1, h2, a{
+        margin-bottom: 10px;
+      }
     }
   }
 
-  .footer_info{
-    .heading{
-      button{
-        display: none;
+}
+
+@media screen and (max-width: 600px) {
+
+  //index.html
+
+  .products_grid{
+    display: flex;
+    flex-direction: column;
+    
+    .content{
+      display: flex;
+      flex-direction: column;
+
+      a{
+        margin-bottom: 25px;
       }
     }
   }

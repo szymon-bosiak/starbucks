@@ -2,6 +2,7 @@
 
 const track = document.querySelectorAll('.slider');
 
+
 for (let i = 0; i < track.length; i++) {
 
     const prevBtn = track[i].children[0];
@@ -16,28 +17,63 @@ for (let i = 0; i < track.length; i++) {
         const currentSlide = slide.querySelector('.active');
         const slideIndex = slide_item.findIndex(slide_item => slide_item === currentSlide);
 
-        console.log(slide_item.length);
+        if (document.documentElement.clientWidth <= 985) {
+           //remove btns if carousele is shorter than 3
+           if (slide_item.length <= 4) {
+               prevBtn.classList.add('hidden');
+               nextBtn.classList.add('hidden');
+           }
+           //remove prev btn if carousele shows first slide
+           else if (slideIndex === 0) {
+               prevBtn.classList.add('hidden');
+               nextBtn.classList.remove('hidden');
+           }
+           //remove next btn if carousele lenght is reached
+           else if (slideIndex === slide_item.length - 3) {
+               nextBtn.classList.add('hidden');
+               prevBtn.classList.remove('hidden');
+           }
+           //show all btns
+           else {
+               prevBtn.classList.remove('hidden');
+               nextBtn.classList.remove('hidden');
+           };
+       } else {
+           //remove btns if carousele is shorter than 3
+           if (slide_item.length <= 4) {
+               prevBtn.classList.add('hidden');
+               nextBtn.classList.add('hidden');
+           }
+           //remove prev btn if carousele shows first slide
+           else if (slideIndex === 0) {
+               prevBtn.classList.add('hidden');
+               nextBtn.classList.remove('hidden');
+           }
+           //remove next btn if carousele lenght is reached
+           else if (slideIndex === slide_item.length - 4) {
+               nextBtn.classList.add('hidden');
+               prevBtn.classList.remove('hidden');
+           }
+           //show all btns
+           else {
+               prevBtn.classList.remove('hidden');
+               nextBtn.classList.remove('hidden');
+           };
+       }
 
-        //remove btns if carousele is shorter than 3
-        if (slide_item.length <= 4) {
-            prevBtn.classList.add('hidden');
-            nextBtn.classList.add('hidden');
-        }
-        //remove prev btn if carousele shows first slide
-        else if (slideIndex === 0) {
-            prevBtn.classList.add('hidden');
-            nextBtn.classList.remove('hidden');
-        }
-        //remove next btn if carousele lenght is reached
-        else if (slideIndex === slide_item.length - 4) {
-            nextBtn.classList.add('hidden');
-            prevBtn.classList.remove('hidden');
-        }
-        //show all btns
-        else {
-            prevBtn.classList.remove('hidden');
-            nextBtn.classList.remove('hidden');
-        };
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
     check();
